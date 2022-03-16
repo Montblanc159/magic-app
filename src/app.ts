@@ -8,7 +8,7 @@ import connectLivereload from "connect-livereload"
 dotenv.config()
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 if (process.env.NODE_ENV === "development") {
   const liveReloadServer = livereload.createServer()

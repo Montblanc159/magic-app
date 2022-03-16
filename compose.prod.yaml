@@ -1,14 +1,14 @@
 version: "3.9"
 services:
-  magic-app-dev:
-    image: magic-app:dev
+  magic-app-prod:
+    image: magic-app:prod
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.prod
     volumes:
       - ./:/app
     ports:
       - "3000:3000"
-      - "35729:35729"
     environment:
-      - NODE_ENV=development
+      - PORT=3000
+      - NODE_ENV=production
