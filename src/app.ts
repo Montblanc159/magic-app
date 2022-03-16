@@ -6,7 +6,7 @@ import livereload from "livereload"
 import connectLivereload from "connect-livereload"
 
 const liveReloadServer = livereload.createServer()
-liveReloadServer.watch(path.join(__dirname, 'public'))
+liveReloadServer.watch(path.join(__dirname, 'views'))
 
 dotenv.config()
 

@@ -1,8 +1,10 @@
 version: "3.9"
 services:
-  getting-started:
-    image: getting-started
+  magic-app:
+    build: .
     volumes:
       - ./:/app
     ports:
       - "3000:3000"
+      - "35729:35729"
+
