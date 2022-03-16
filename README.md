@@ -12,5 +12,4 @@ A `.env` file with PORT defined
 
 ## Commands
 `docker compose up` to start live reloading dev server
-
-
+`docker compose -f compose.prod.yaml up` to start prod server
