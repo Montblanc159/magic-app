@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -r dist/",
+    "clean": "rimraf dist/",
     "build": "tslint -c tslint.json -p tsconfig.json --fix && tsc",
     "prestart": "yarn clean && yarn build",
     "start": "concurrently 'tsc -w' 'parcel watch ./src/views/**/* --dist-dir ./dist/views' 'nodemon dist/app.js'",
+    "build:production": "tslint -c tslint.json -p tsconfig.json --fix && tsc && parcel build ./src/views/**/* --dist-dir ./dist/views",
+    "prestart:production": "yarn clean && yarn build:production",
+    "start:production": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -16,7 +19,8 @@
     "ejs": "3",
     "express": "^4.17.3",
     "livereload": "^0.9.3",
-    "parcel": "^2.3.2"
+    "parcel": "^2.3.2",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.3.2",

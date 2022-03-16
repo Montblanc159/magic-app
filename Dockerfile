@@ -4,5 +4,5 @@ RUN apk add --no-cache python2 g++ make
 WORKDIR /app
 COPY . .
 RUN yarn install
-CMD ["yarn", "start"]
 EXPOSE 3000 35729
+CMD ["yarn", "start"]
